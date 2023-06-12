@@ -15,9 +15,13 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comment: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     post_date: {
       type: DataTypes.DATE,

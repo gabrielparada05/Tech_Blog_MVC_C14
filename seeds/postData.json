@@ -1,0 +1,32 @@
+[
+  {
+    "title": "First Post",
+    "content": "This is the first post.",
+    "post_date": "2023-06-12T12:34:56.789Z"
+   
+  },
+  {
+    "title": "Second Post",
+    "content": "This is the second post.",
+    "post_date": "2023-06-12T12:34:56.789Z"
+ 
+  },
+  {
+    "title": "Third Post",
+    "content": "This is the third post.",
+    "post_date": "2023-06-12T12:34:56.789Z"
+   
+  },
+  {
+    "title": "Fourth Post",
+    "content": "This is the fourth post.",
+    "post_date": "2023-06-12T12:34:56.789Z"
+    
+  },
+  {
+    "title": "Fifth Post",
+    "content": "This is the fifth post.",
+    "post_date": "2023-06-12T12:34:56.789Z"
+   
+  }
+]
