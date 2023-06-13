@@ -30,7 +30,7 @@ router.post('/', withAuth, async (req, res) => {
     if (req.session) {
         try {
             const dbCommentData = await Comment.create({
-                comment_text: req.body.comment_text,
+                comment_content: req.body.comment_content,
                 post_id: req.body.post_id,
                 user_id: req.session.user_id,
             });
@@ -46,7 +46,7 @@ router.put('/:id', withAuth, async (req, res) => {
     try {
         const dbCommentData = await Comment.update(
             {
-                comment_text: req.body.comment_text
+                comment_content: req.body.comment_content
             },
             {
                 where: {
