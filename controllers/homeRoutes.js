@@ -29,35 +29,6 @@ router.get('/', async (req, res) => {
 });
 
 
-// GET all posts for users
-
-// router.get('/', withAuth, async (req, res) => {
-//   try {
-//     const userId = req.session.user_id;
-//     const dbPostData = await Post.findAll({
-//       where: {
-//         user_id: userId,
-//       },
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//       ],
-//     });
-
-//     const posts = dbPostData.map((post) => post.get({ plain: true }));
-
-//     res.render('postUser', {
-//       posts,
-//       loggedIn: true,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
 
 
 router.get('/post/:id', async (req, res) => {
