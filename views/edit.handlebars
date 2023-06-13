@@ -1,0 +1,17 @@
+{{#if logged_in}}
+<div class="text-center">
+  <form id="edit-input">
+  <label for="title">Title:</label>
+  <textarea id="title">{{title}}</textarea>
+
+  <label for="content">Content:</label>
+  <textarea id="content">{{content}}</textarea>
+
+  <label for="comment">Comment:</label>
+  <textarea id="comment">{{comment}}</textarea>
+</form>
+
+  <button class="btn btn-sm btn-danger" id="edit-button" data-id="{{post.id}}"> EDIT </button>
+{{/if}}
+
+</div>

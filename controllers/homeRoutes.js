@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../Main/models');
+const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all posts for homepage
@@ -29,6 +29,37 @@ router.get('/', async (req, res) => {
 });
 
 
+// GET all posts for users
+
+// router.get('/', withAuth, async (req, res) => {
+//   try {
+//     const userId = req.session.user_id;
+//     const dbPostData = await Post.findAll({
+//       where: {
+//         user_id: userId,
+//       },
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         },
+//       ],
+//     });
+
+//     const posts = dbPostData.map((post) => post.get({ plain: true }));
+
+//     res.render('postUser', {
+//       posts,
+//       loggedIn: true,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -50,6 +81,34 @@ router.get('/post/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const posts = postData.get({ plain: true });
+
+    res.render('edit', {
+      ...posts,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
