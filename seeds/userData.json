@@ -1,27 +1,17 @@
 [
   {
-    "username": "john_doe",
-    "email": "john@example.com",
-    "password": "$2a$10$hashedpassword1"
+    "name": "Sal",
+    "email": "sal@hotmail.com",
+    "password": "password12345"
   },
   {
-    "username": "jane_smith",
-    "email": "jane@example.com",
-    "password": "$2a$10$hashedpassword2"
+    "name": "Lernantino",
+    "email": "lernantino@gmail.com",
+    "password": "password12345"
   },
   {
-    "username": "alex_wilson",
-    "email": "alex@example.com",
-    "password": "$2a$10$hashedpassword3"
-  },
-  {
-    "username": "emma_johnson",
-    "email": "emma@example.com",
-    "password": "$2a$10$hashedpassword4"
-  },
-  {
-    "username": "michael_brown",
-    "email": "michael@example.com",
-    "password": "$2a$10$hashedpassword5"
+    "name": "Amiko",
+    "email": "amiko2k20@aol.com",
+    "password": "password12345"
   }
 ]
