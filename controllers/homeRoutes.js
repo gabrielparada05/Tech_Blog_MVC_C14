@@ -79,6 +79,44 @@ router.get('/post/:id', async (req, res) => {
 });
 
 
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const dbPostData = await Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        {
+          model: Comment,
+          attributes: ['comment_content', 'post_id', 'user_id', 'post_date'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    });
+
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+
+    const post = dbPostData.get({ plain: true });
+    console.log(post);
+    res.render('post', { ...post, logged_in: req.session.logged_in });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {

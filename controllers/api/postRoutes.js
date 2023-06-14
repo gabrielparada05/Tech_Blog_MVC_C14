@@ -80,12 +80,13 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async ({title, content, user_id}, res) => {
   try {
     const dbPostData = await Post.update(
       {
-        title: req.body.title,
-        content: req.body.content
+        title,
+        content,
+        user_id
       },
       {
         where: {

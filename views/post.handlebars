@@ -1,23 +1,31 @@
-<div class="text-center">
-  
-  <h2>{{title}}</h2>
-  <p>{{{get_emoji}}}</p>
+<div class="card">
+  <h2 class="title">{{title}}</h2>
+  <p>{{content}}</p>
   <p>Created by {{user.username}} on {{format_date post_date}}</p>
- <p> {{content}}</p>
- <p>{{comment}}</p>
-
-  {{#if logged_in}}
-     <p>
-    <button class="btn btn-primary" id="new-comment-btn">Comment</button>
-  </p>
-  <form id="comment-form" style="display: none;">
-<textarea class="form-textarea form-input" id="comment" >  </textarea>
-
-        <input type="hidden" id="thisId" value="{{id}}"/>
-        <button id="submitComment" type="submit">Submit</button>
-      </form>
-        {{else}}
-        <p class="login-link" onclick="window.location.href = '/login';">To add a comment, please login</p>
-        {{/if}}
- 
+  
 </div>
+<div class="card">
+  {{#if comments}}
+    <h4 >Comments</h4>
+    {{#each comments}}
+    <div class="row-comments">
+      <p>{{comment_content}}</p>
+      <p>Created by {{user.username}} on {{format_date post_date}} </p>
+      </div>
+    {{/each}}
+  {{/if}}
+</div>
+  {{#if logged_in}}
+    <p>
+      <button class="btn btn-primary" id="new-comment-btn">Comment</button>
+    </p>
+    <form id="comment-form" style="display: none;">
+      <textarea class="form-textarea form-input" id="comment" value="{{user_id}}"></textarea>
+      <input type="hidden" id="thisId" value="{{id}}" />
+      <button id="submitComment" type="submit">Submit</button>
+    </form>
+  {{else}}
+    <p class="login-link" onclick="window.location.href = '/login';">To add a comment, please login</p>
+  {{/if}}
+
+<script src="/js/comment.js"></script>

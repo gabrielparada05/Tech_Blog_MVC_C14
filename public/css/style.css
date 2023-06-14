@@ -1,5 +1,16 @@
+
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
 }
 
 .no-button {
@@ -9,8 +20,9 @@ header, .project:not(:last-child) {
   cursor: pointer;
   color: #1b89bc;
   text-decoration: none;
-  font-size: 100%;
+  font-size: 25px;
 }
+
 
 .no-button:hover {
   color: #065b83;
@@ -25,55 +37,47 @@ header, .project:not(:last-child) {
 
 /* Styles for headings */
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #222;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #444;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #555;
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #666;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #777;
 }
 
-nav {
-  text-align: center;
-}
-
-nav a {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-/* Styles for paragraphs */
 p {
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: #333;
   line-height: 1.5;
 }
 
+
 /* Styles for links */
 a {
   color: #1b6ec2;
-  text-decoration: none;
+  text-decoration:double;
+  line-height: 15px;
 }
 
 a:hover {
@@ -110,12 +114,14 @@ input,
 textarea {
   display: block;
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 1rem;
+  margin: 5px;
+  font-size: 2rem;
   color: #333;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+
 }
 
 textarea {

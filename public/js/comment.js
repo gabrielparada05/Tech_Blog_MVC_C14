@@ -9,18 +9,20 @@ commentBtn.addEventListener("click", function() {
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const comment_content = document.querySelector('#comment').value.trim();
+  const comment = document.querySelector('#comment').value.trim();
 
   const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
   ];
-
-  if (comment_content) {
+  const user_id = document.querySelector('#comment').value;
+  
+  if (comment) {
       const response = await fetch('/api/comments', {
           method: 'POST',
           body: JSON.stringify({
-              post_id,
-              comment_content
+              comment_content: comment,
+              user_id: user_id,
+              post_id: post_id,
           }),
           headers: {
               'Content-Type': 'application/json'

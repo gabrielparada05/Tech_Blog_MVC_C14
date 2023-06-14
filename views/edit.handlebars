@@ -2,16 +2,15 @@
 <div class="text-center">
   <form id="edit-input">
   <label for="title">Title:</label>
-  <textarea id="title">{{title}}</textarea>
+  <textarea id="title">{{post.title}}</textarea>
 
   <label for="content">Content:</label>
-  <textarea id="content">{{content}}</textarea>
-
-  <label for="comment">Comment:</label>
-  <textarea id="comment">{{comment}}</textarea>
+  <textarea id="content">{{post.content}}</textarea>
+<input type='hidden' value={{user_id}} id="value-id"/>
 </form>
 
-  <button class="btn btn-sm btn-danger" id="edit-button" data-id="{{post.id}}"> EDIT </button>
+  <button class="btn btn-sm btn-danger" id="edit-button" data-id="{{post.id}}" type="submit"> EDIT </button>
 {{/if}}
 
 </div>
+<script scr="/js/edit.js"></script>
